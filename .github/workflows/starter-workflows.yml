@@ -23,4 +23,5 @@ jobs:
       - name: Upload Test Results
         uses: actions/upload-artifact@v3
         with:
+          name: TestResults.xcresult
           path: TestResults.xcresult
