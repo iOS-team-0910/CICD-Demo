@@ -23,5 +23,5 @@ jobs:
         with:
           project: HelloCICD/HelloCICD.xcodeproj
           scheme: HelloCICD
-          destination: ${ platform:iOS Simulator, id:F2CF38EB-5234-49EC-A0D5-110795A75F98, OS:16.2, name:iPhone 13 }
+          destination: ${ platform=iOS Simulator, id=F2CF38EB-5234-49EC-A0D5-110795A75F98, OS=16.2, name=iPhone 13 }
           action: test
