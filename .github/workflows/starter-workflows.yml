@@ -15,20 +15,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build
-        # env:
-        #   platform: ${{ 'iOS Simulator' }}
         run: |
           xcodebuild -project /Users/runner/work/CICD-Demo/CICD-Demo/HelloCICD/HelloCICD.xcodeproj -scheme HelloCICD -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 13,OS=16.2" build
+      - name: Test
+        run: |
           xcodebuild -project /Users/runner/work/CICD-Demo/CICD-Demo/HelloCICD/HelloCICD.xcodeproj -scheme HelloCICD -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 13,OS=16.2" -resultBundlePath TestResults test
-          cp -R TestResults CICD-Demo/CICD-Demo/
       - name: Upload Test Results
         uses: actions/upload-artifact@v3
         with:
           name: test-results
           path: TestResults
-        # uses: sersoft-gmbh/xcodebuild-action@v2
-        # with:
-        #   project: HelloCICD/HelloCICD.xcodeproj
-        #   scheme: HelloCICD
-        #   destination: "platform=iOS Simulator,OS=16.2,name=iPhone 13"
-        #   action: test
