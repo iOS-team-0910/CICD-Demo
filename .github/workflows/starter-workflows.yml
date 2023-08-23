@@ -23,5 +23,5 @@ jobs:
       - name: Upload Test Results
         uses: actions/upload-artifact@v3
         with:
-          name: "TestResults_$(date +%y-%m-%d+%s).xcresult"
+          name: "TestResults_${(date +%y-%m-%d+%s)}.xcresult"
           path: TestResults.xcresult
