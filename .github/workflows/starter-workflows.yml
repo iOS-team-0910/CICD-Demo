@@ -23,5 +23,5 @@ jobs:
         with:
           project: HelloCICD/HelloCICD.xcodeproj
           scheme: HelloCICD
-          destination: platform=macOS
+          destination: platform=iOS Simulator
           action: test
