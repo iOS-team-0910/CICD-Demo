@@ -15,7 +15,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build
-        env:
-          platform: ${{ 'iOS Simulator' }}
-        run: |
-          xcodebuild -project /HelloCICD/HelloCICD.xcodeproj -scheme HelloCICD -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13,OS=16.4' build
+        # env:
+        #   platform: ${{ 'iOS Simulator' }}
+        # run: |
+        #   xcodebuild -project /HelloCICD/HelloCICD.xcodeproj -scheme HelloCICD -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13,OS=16.4' build
+        uses: sersoft-gmbh/xcodebuild-action@v2
+        with:
+          project: HelloCICD.xcodeproj
+          scheme: HelloCICD
+          destination: platform=macOS
+          action: test
