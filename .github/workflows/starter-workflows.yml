@@ -20,6 +20,8 @@ jobs:
         run: |
           xcodebuild -project /Users/runner/work/CICD-Demo/CICD-Demo/HelloCICD/HelloCICD.xcodeproj -scheme HelloCICD -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 13,OS=16.2" build
           xcodebuild -project /Users/runner/work/CICD-Demo/CICD-Demo/HelloCICD/HelloCICD.xcodeproj -scheme HelloCICD -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 13,OS=16.2" -resultBundlePath TestResults test
+      - name: Copy Test Results
+        run: cp -R TestResults CICD-Demo/CICD-Demo/
       - name: Upload Test Results
         uses: actions/upload-artifact@v3
         with:
