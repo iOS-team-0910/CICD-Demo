@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: test-results
-          path: /Users/runner/work/CICD-Demo/CICD-Demo/TestResults
+          path: CICD-Demo/CICD-Demo/TestResults
         # uses: sersoft-gmbh/xcodebuild-action@v2
         # with:
         #   project: HelloCICD/HelloCICD.xcodeproj
